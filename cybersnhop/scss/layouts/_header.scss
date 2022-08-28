@@ -1,0 +1,141 @@
+.header {
+  height: $height-header;
+  background-image: linear-gradient(#f6402d, #fb5533);
+  .header__nav {
+    height: $height-nav;
+    .nav__list {
+      list-style: none;
+      line-height: $height-nav;
+      margin: 0;
+      .nav__item {
+        position: relative;
+        color: $white-color;
+        font-size: $fs-2;
+        padding: 0 8px;
+        .nav__link {
+          text-decoration: none;
+          color: $white-color;
+          &:hover {
+            opacity: 0.6;
+          }
+          i {
+            padding: 0 6px;
+          }
+        }
+
+        .header__qr {
+          z-index: 1;
+          display: none;
+          position: absolute;
+          top: 30px;
+          left: 6px;
+          background-color: #fff;
+          width: 190px;
+          height: 230px;
+          border-radius: 2px;
+          box-shadow: 3px 5px 20px 0px rgb(110 105 105 / 31%);
+
+          .header__qr-img {
+            width: 100%;
+            border-radius: 2px;
+            display: block;
+            margin-bottom: 8px;
+          }
+          .header__qr-download {
+            display: flex;
+            justify-content: space-around;
+
+            .header__qr-app {
+              width: 40%;
+            }
+          }
+        }
+
+        &:hover .header__qr {
+          display: block;
+        }
+      }
+      .nav__item--prevent {
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 2px;
+          background-color: rgba(231, 231, 231, 0.311);
+          height: $height-prevent;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .header-with-search {
+    height: $height-search;
+    display: flex;
+    align-items: center;
+
+    .header__logo {
+      width: 200px;
+
+      .header__logo-img {
+        width: 60px;
+        margin-left: 35px;
+      }
+    }
+
+    .header__search {
+      background-color: $white-color;
+      height: 40px;
+      flex: 1;
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      .header__search-input-warp {
+        flex: 1;
+        height: 100%;
+        position: relative;
+
+        input {
+          height: 100%;
+          outline: none;
+          border: none;
+          padding: 0 16px;
+          width: 100%;
+          border-radius: 2px;
+        }
+      }
+
+      .header__search-btn {
+        border: none;
+        background-color: $primary-color1;
+        border-radius: 2px;
+        height: 80%;
+        width: 60px;
+        margin-right: 4px;
+        cursor: pointer;
+
+        i {
+          color: $white-color;
+        }
+      }
+    }
+
+    .header__cart {
+      width: 160px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      i {
+        font-size: $fs-3;
+        color: $white-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CyberShop</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="container">
+          <!-- Header NAV -->
+          <div class="header__nav d-flex justify-content-between">
+            <ul class="nav__list d-flex">
+              <li class="nav__item nav__item--prevent d-flex">
+                <a href="#" class="nav__link d-flex"> Tải ứng dụng </a>
+                <div class="header__qr">
+                  <img class="header__qr-img" src="./img/qr.png" alt="QR" />
+                  <div class="header__qr-download">
+                    <img
+                      class="header__qr-app"
+                      src="./img/appstore.png"
+                      alt=""
+                    />
+                    <img class="header__qr-app" src="./img/chplay.png" alt="" />
+                  </div>
+                </div>
+              </li>
+              <li class="nav__item d-flex">
+                Kết nối
+                <a href="#" class="nav__link"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+                <a href="#" class="nav__link"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+
+            <ul class="nav__list d-flex">
+              <li class="nav__item nav__item--prevent d-flex">
+                <a href="#" class="nav__link d-flex">Thông báo</a>
+              </li>
+              <li class="nav__item d-flex">
+                <a href="#" class="nav__link d-flex">Hỗ trợ</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Header NAV -->
+
+          <!-- header search -->
+          <div class="header-with-search">
+            <div class="header__logo">
+              <img class="header__logo-img" src="./img/MAX-OP1.png" alt="" />
+            </div>
+            <div class="header__search">
+              <div class="header__search-input-warp">
+                <input placeholder="Tìm kiếm sản phẩm..." type="text" />
+              </div>
+              <button class="header__search-btn">
+                <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div
+              class="header__cart"
+              data-toggle="modal"
+              data-target="#exampleModal"
+            >
+              <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+            </div>
+          </div>
+          <!-- header search -->
+        </div>
+      </header>
+      <!-- HEADER -->
+
+      <!-- CONTENT -->
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <!-- category -->
+            <div class="col-md-2">
+              <div class="category">
+                <div class="category__heading">
+                  <i class="category__heading-icon fa-solid fa-list"></i>
+                  Danh mục
+                </div>
+                <select class="category__list form-control">
+                  <option>Tất cả SP</option>
+                  <option>SamSung</option>
+                  <option>Apple</option>
+                </select>
+              </div>
+            </div>
+            <!-- product -->
+            <div class="col-md-10">
+              <div id="home-product-user" class="row"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CONTENT -->
+    </div>
+
+    <!-- MODAL -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal__nav" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-list">
+              <div class="modal-item">
+                <div class="modal-img">
+                  <img
+                    src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
+                    alt=""
+                  />
+                </div>
+                <strong class="modal-name">SamSung Galaxy M51</strong>
+                <span class="qty-change">
+                  <div>
+                    <button class="btn-qty">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <p class="qty">1</p>
+                    <button class="btn-qty">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                </span>
+                <p class="price">$ 2000</p>
+                <button class="modal-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./src/models/product.js"></script>
+    <script src="./src/services/service.js"></script>
+    <script src="./src/controller/main.js"></script>
+  </body>
+</html>
