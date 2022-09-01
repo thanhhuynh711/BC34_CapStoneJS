@@ -25,12 +25,14 @@ function renderHTML(data) {
     <div class="home-product">
       <div class="home-product__img">
         <img
+          id="prImg"
+          class="img-prd"
           src="${users.img}"
           alt=""
         />
       </div>
       <div class="home-product__body">
-        <h1 class="home-product__name">${users.name}</h1>
+        <h1 id="prName" class="home-product__name">${users.name}</h1>
         <h4 class="home-product__screen">screen: ${users.screen} in</h4>
         <h4 class="home-product__backCamera">
           cam sau: ${users.backCamera}
@@ -42,10 +44,14 @@ function renderHTML(data) {
           ${users.desc}
         </h4>
         <div class="home-product__buy">
-          <h3 class="home-product__price">$${users.price}</h3>
-          <button class="home-product__btn">Add</button>
+          <div class="d-flex align-items-center">
+          <span>$</span>
+          <h3 id="prGia" class="home-product__price">${users.price}</h3>
+          </div>
+          <button type="button" class="btn home-product__btn" data-toggle="modal" data-target="#myModal"  onclick="addProduct()">Add</button>
         </div>
       </div>
+      <div class="home-product__favorite"><span>${users.type}</span></div>
     </div>
   </div>
     `;

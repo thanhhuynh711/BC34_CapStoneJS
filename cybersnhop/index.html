@@ -77,18 +77,19 @@
             </div>
             <div class="header__search">
               <div class="header__search-input-warp">
-                <input placeholder="Tìm kiếm sản phẩm..." type="text" />
+                <input id="searchName"  placeholder="Tìm kiếm sản phẩm..." type="text" />
               </div>
               <button class="header__search-btn">
                 <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
-            <div
-              class="header__cart"
-              data-toggle="modal"
-              data-target="#exampleModal"
-            >
-              <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+            <div class="header__cart"> 
+            <button class="header__cart-btn"  data-toggle="modal" data-target="#myModal">
+            <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+            <div class="header__cart-price">
+              <p class="header__cart-num"><span >0</span><sub>$</sub></p>
+            </div>
+            </button>
             </div>
           </div>
           <!-- header search -->
@@ -107,18 +108,19 @@
                   <i class="category__heading-icon fa-solid fa-list"></i>
                   Danh mục
                 </div>
-                <select class="category__list form-control">
+                <select id="mySelect" onchange="myFunction()" class="category__list form-control">
                   <option>Tất cả SP</option>
                   <option>SamSung</option>
                   <option>Apple</option>
                 </select>
+               
               </div>
             </div>
             <!-- product -->
             <div class="col-md-10">
               <div id="home-product-user" class="row"></div>
             </div>
-          </div>
+           </div>
         </div>
       </div>
       <!-- CONTENT -->
@@ -127,11 +129,7 @@
     <!-- MODAL -->
     <div
       class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
+      id="myModal"
     >
       <div class="modal-dialog modal__nav" role="document">
         <div class="modal-content">
@@ -147,42 +145,28 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="modal-list">
-              <div class="modal-item">
-                <div class="modal-img">
-                  <img
-                    src="https://cdn.tgdd.vn/Products/Images/42/217536/samsung-galaxy-m51-trang-new-600x600-600x600.jpg"
-                    alt=""
-                  />
-                </div>
-                <strong class="modal-name">SamSung Galaxy M51</strong>
-                <span class="qty-change">
-                  <div>
-                    <button class="btn-qty">
-                      <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <p class="qty">1</p>
-                    <button class="btn-qty">
-                      <i class="fas fa-chevron-right"></i>
-                    </button>
-                  </div>
-                </span>
-                <p class="price">$ 2000</p>
-                <button class="modal-delete">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-header cart-column">Giá $</span>
+                            <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                        </div>
+                        <div id="cartItem" class="cart-items"> 
+                      </div>
+                      <div class="cart-total">
+                          <strong class="cart-total-title">Tổng Cộng:</strong>
+                          <span class="cart-total-price"></span>
+                      </div>
+
+                      
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary-color">Thanh toán</button>
 
             <button
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
             >
-              Close
+              Đóng
             </button>
           </div>
         </div>
@@ -216,8 +200,12 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    
     <script src="./src/models/product.js"></script>
     <script src="./src/services/service.js"></script>
     <script src="./src/controller/main.js"></script>
+
+    <script src="./js/style.js"></script>
+
   </body>
 </html>
