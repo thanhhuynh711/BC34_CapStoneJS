@@ -1,5 +1,4 @@
 // Delete
-
 var removeCart = document.getElementsByClassName("btn-danger");
 for (var i = 0; i < removeCart.length; i++) {
   var button = removeCart[i];
@@ -100,4 +99,11 @@ function addItemToCart(title, price, img) {
       }
       updatecart();
     });
+}
+
+function thanhToanSP() {
+  var element = document.querySelector("#cartItem");
+  element.innerHTML = "";
+  alert("Thanh toán thành công");
+  updatecart();
 }

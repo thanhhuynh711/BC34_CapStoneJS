@@ -21,7 +21,7 @@ function renderHTML(data) {
   var content = "";
   data.forEach(function (users) {
     content += `
-    <div class="col-md-3">
+    <div class="col-md-3 ${users.type}">
     <div class="home-product">
       <div class="home-product__img">
         <img
@@ -58,4 +58,26 @@ function renderHTML(data) {
   });
 
   getEle("home-product-user").innerHTML = content;
+}
+
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+
+  service
+    .getListUser()
+    .then(function (result) {
+      var newArray = result.data.filter(function (obj) {
+        if (x == "Apple") {
+          return obj.type == "Apple";
+        } else if (x == "SamSung") {
+          return obj.type == "SamSung";
+        } else {
+          return result.data;
+        }
+      });
+      renderHTML(newArray);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
