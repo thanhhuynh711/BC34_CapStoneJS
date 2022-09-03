@@ -115,4 +115,19 @@
       }
     }
   }
+
+  @media (max-width: 739px) {
+    .modal__nav {
+      max-width: 100%;
+      width: auto;
+    }
+
+    .cart-column {
+      margin-right: 0 !important;
+
+      .cart-item-title {
+        font-size: $fs-1 !important;
+      }
+    }
+  }
 }

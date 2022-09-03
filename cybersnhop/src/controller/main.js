@@ -21,7 +21,7 @@ function renderHTML(data) {
   var content = "";
   data.forEach(function (users) {
     content += `
-    <div class="col-md-3 ${users.type}">
+    <div class="col-lg-3 col-md-4 ${users.type}">
     <div class="home-product">
       <div class="home-product__img">
         <img

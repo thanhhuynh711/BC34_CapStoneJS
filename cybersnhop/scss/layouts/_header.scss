@@ -158,4 +158,18 @@
       }
     }
   }
+
+  @media (max-width: 739px) {
+    height: $height-search;
+    .header__nav {
+      height: 0;
+      .nav__list {
+        display: none !important;
+      }
+    }
+
+    .header__search {
+      display: none !important;
+    }
+  }
 }

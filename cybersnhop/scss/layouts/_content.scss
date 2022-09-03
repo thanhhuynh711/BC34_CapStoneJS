@@ -14,6 +14,10 @@
         margin-right: 4px;
       }
     }
+
+    .category__list {
+      margin-bottom: 20px;
+    }
   }
 
   .home-product {
@@ -111,6 +115,12 @@
         left: 0;
         filter: brightness(60%);
       }
+    }
+  }
+
+  @media (min-width: 740px) and (max-width: 1023px) {
+    .col-md-2 {
+      // display: none;
     }
   }
 }

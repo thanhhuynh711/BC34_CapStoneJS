@@ -57,4 +57,12 @@
       }
     }
   }
+
+  @media (max-width: 739px) {
+    text-align: center;
+
+    .footer__downl {
+      justify-content: center;
+    }
+  }
 }
