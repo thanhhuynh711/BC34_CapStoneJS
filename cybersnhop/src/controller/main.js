@@ -86,3 +86,7 @@ function myFunction() {
       console.log(error);
     });
 }
+
+function addProduct() {
+  document.querySelectorAll(".quantity-input").value = 1;
+}

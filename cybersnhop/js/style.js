@@ -7,6 +7,7 @@ for (var i = 0; i < removeCart.length; i++) {
     button_remove.parentElement.parentElement.remove();
     updatecart();
   });
+  updatecart();
 }
 
 // update cart
@@ -22,6 +23,7 @@ function updatecart() {
     var quantity = quantityItem.value;
     total = total + price * quantity;
   }
+
   document.getElementsByClassName("cart-total-price")[0].innerText =
     total + "$";
   document.querySelector(".header__cart-price span").innerHTML = total;
@@ -29,15 +31,12 @@ function updatecart() {
 
 // thay đổi số lượng sản phẩm
 var quantityInput = document.getElementsByClassName("cart-quantity-input");
-var inputHihi = document.getElementsByClassName("quantity-input");
-console.log(inputHihi.defaultValue);
 for (var i = 0; i < quantityInput.length; i++) {
   var input = quantityInput[i];
   input.addEventListener("change", function (event) {
     var input = event.target;
     if (isNaN(input.value) || input.value <= 0) {
       input.value = 1;
-      inputHihi.value = input.value;
     }
     updatecart();
   });
@@ -47,7 +46,7 @@ for (var i = 0; i < quantityInput.length; i++) {
 function addProduct() {
   var addCart = document.getElementsByClassName("home-product__btn");
   for (var i = 0; i < addCart.length; i++) {
-    var add = addCart[i];
+    // var add = addCart[i];
     var button = event.target;
     var product = button.parentElement.parentElement;
     var img = product.parentElement.getElementsByClassName("img-prd")[0].src;
@@ -105,20 +104,6 @@ function addItemToCart(title, price, img, quantity) {
   updatecart();
 }
 
-// function setLocalStorage() {
-//   var dataString = JSON.stringify(cartRow);
-//   localStorage.setItem("DanhSachNhanVien", dataString);
-// }
-
-// function getLocalStorage() {
-//   if (localStorage.getItem("DanhSachNhanVien")) {
-//     var dataString = localStorage.getItem("DanhSachNhanVien");
-//     var dataJson = JSON.parse(dataString);
-//     dsnv.arr = dataJson;
-//     renderTable(dataJson);
-//   }
-// }
-
 // Thanh toán
 function thanhToanSP() {
   var element = document.querySelector("#cartItem");
@@ -126,21 +111,3 @@ function thanhToanSP() {
   alert("Thanh toán thành công");
   updatecart();
 }
-
-// function quantityInput() {
-//   var cardInput = document.getElementsByClassName("cart-quantity-input").value;
-//   var input = document.getElementsByClassName("quantity-input").value;
-//   for (let i = 0; i < input.length; i++) {
-//     cardInput[i].value = input[i].value;
-
-//     service
-//       .getListUser()
-//       .then(function (result) {
-//         renderHTML(cardInput);
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-//   }
-//   console.log(cardInput);
-// }
