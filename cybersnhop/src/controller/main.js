@@ -43,11 +43,16 @@ function renderHTML(data) {
         <h4 class="home-product__desc">
           ${users.desc}
         </h4>
-        <div class="home-product__buy">
+        <div class="home-product__price-warp">
+          <p style="margin-bottom: 0;">Giá</p>
           <div class="d-flex align-items-center">
-          <span>$</span>
           <h3 id="prGia" class="home-product__price">${users.price}</h3>
+          <span>$</span>
           </div>
+          </div>
+          <div class="home-product__buy">
+          <p style="margin-bottom: 0;">Số lượng</p>
+          <input class="quantity-input" style="width: 40px;" type="number" value="1">
           <button type="button" class="btn home-product__btn" data-toggle="modal" data-target="#myModal"  onclick="addProduct()">Add</button>
         </div>
       </div>

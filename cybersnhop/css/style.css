@@ -224,18 +224,24 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
 }
-.content .home-product .home-product__body .home-product__buy {
+.content .home-product .home-product__body .home-product__price-warp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.content .home-product .home-product__buy {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.content .home-product .home-product__body .home-product__buy .home-product__btn {
+.content .home-product .home-product__buy .home-product__btn {
   border-radius: 20px;
   border: 1px solid #000;
   background: none;
   padding: 2px 10px;
 }
-.content .home-product .home-product__body .home-product__buy .home-product__btn:focus {
+.content .home-product .home-product__buy .home-product__btn:focus {
   outline: 2px solid #f6402d;
   border: none;
 }

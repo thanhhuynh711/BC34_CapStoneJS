@@ -29,12 +29,15 @@ function updatecart() {
 
 // thay đổi số lượng sản phẩm
 var quantityInput = document.getElementsByClassName("cart-quantity-input");
+var inputHihi = document.getElementsByClassName("quantity-input");
+console.log(inputHihi.defaultValue);
 for (var i = 0; i < quantityInput.length; i++) {
   var input = quantityInput[i];
   input.addEventListener("change", function (event) {
     var input = event.target;
     if (isNaN(input.value) || input.value <= 0) {
       input.value = 1;
+      inputHihi.value = input.value;
     }
     updatecart();
   });
@@ -43,7 +46,6 @@ for (var i = 0; i < quantityInput.length; i++) {
 // Thêm vào giỏ
 function addProduct() {
   var addCart = document.getElementsByClassName("home-product__btn");
-  // console.log(addCart);
   for (var i = 0; i < addCart.length; i++) {
     var add = addCart[i];
     var button = event.target;
@@ -53,14 +55,15 @@ function addProduct() {
       product.getElementsByClassName("home-product__name")[0].innerText;
     var price = product.getElementsByClassName("home-product__price")[0]
       .innerText;
-    addItemToCart(title, price, img);
+    var quantity = product.getElementsByClassName("quantity-input")[0].value;
+    addItemToCart(title, price, img, quantity);
     updatecart();
   }
 }
 
 //
 
-function addItemToCart(title, price, img) {
+function addItemToCart(title, price, img, quantity) {
   var cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");
   var cartItems = document.getElementsByClassName("cart-items")[0];
@@ -78,7 +81,7 @@ function addItemToCart(title, price, img) {
   </div>
   <span class="cart-price cart-column">${price}</span>
   <div class="cart-quantity cart-column">
-      <input class="cart-quantity-input" type="number" value="1">
+      <input class="cart-quantity-input" type="number" value="${quantity}">
       <button style="margin-left: auto;" class="btn btn-danger" type="button">Xóa</button>
   </div>`;
   cartRow.innerHTML = cartRowContents;
@@ -99,11 +102,45 @@ function addItemToCart(title, price, img) {
       }
       updatecart();
     });
+  updatecart();
 }
 
+// function setLocalStorage() {
+//   var dataString = JSON.stringify(cartRow);
+//   localStorage.setItem("DanhSachNhanVien", dataString);
+// }
+
+// function getLocalStorage() {
+//   if (localStorage.getItem("DanhSachNhanVien")) {
+//     var dataString = localStorage.getItem("DanhSachNhanVien");
+//     var dataJson = JSON.parse(dataString);
+//     dsnv.arr = dataJson;
+//     renderTable(dataJson);
+//   }
+// }
+
+// Thanh toán
 function thanhToanSP() {
   var element = document.querySelector("#cartItem");
   element.innerHTML = "";
   alert("Thanh toán thành công");
   updatecart();
 }
+
+// function quantityInput() {
+//   var cardInput = document.getElementsByClassName("cart-quantity-input").value;
+//   var input = document.getElementsByClassName("quantity-input").value;
+//   for (let i = 0; i < input.length; i++) {
+//     cardInput[i].value = input[i].value;
+
+//     service
+//       .getListUser()
+//       .then(function (result) {
+//         renderHTML(cardInput);
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       });
+//   }
+//   console.log(cardInput);
+// }
