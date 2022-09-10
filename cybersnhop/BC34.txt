@@ -1,0 +1,5 @@
+
+Huỳnh Minh Hoàng :  Phần quản trị,  xây dựng các chức năng, (hiện danh sách, thêm, xóa, cập nhật sản
+phẩm), tạo hàm cho người dùng select chọn sản phẩm bên trang bán hàng
+
+Huỳnh Tấn Thành : xây dựng layout bán hàng, tạo hàm thêm vào giỏ hàng , tạo hàm cho người dùng xóa và thay đổi số lượng , thanh toán
