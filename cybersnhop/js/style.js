@@ -57,6 +57,7 @@ function addProduct() {
     var quantity = product.getElementsByClassName("quantity-input")[0].value;
     addItemToCart(title, price, img, quantity);
     updatecart();
+    return;
   }
 }
 
@@ -69,6 +70,7 @@ function addItemToCart(title, price, img, quantity) {
   var cart_title = cartItems.getElementsByClassName("cart-item-title");
   for (var i = 0; i < cart_title.length; i++) {
     if (cart_title[i].innerText == title) {
+      alert("Sản phẩm đã có trong giỏ hàng");
       return;
     }
   }
